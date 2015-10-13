@@ -31,6 +31,7 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -63,6 +64,7 @@ import java.util.ArrayList;
  * @author Joe Berria
  */
 public class EventHandler implements OnClickListener {
+    final private static String TAG = "EventHandler";
     /*
      * Unique types to control which file operation gets
      * performed in the background
@@ -500,7 +502,7 @@ public class EventHandler implements OnClickListener {
                                 i = new Intent(mContext, ProcessManager.class);
                                 mContext.startActivity(i);
                                 break;
-    	/*
+        /*
     						case 1:
     							i = new Intent(context, WirelessManager.class);
     							context.startActivity(i);
@@ -542,6 +544,7 @@ public class EventHandler implements OnClickListener {
         private String display_size;
         private ArrayList<Integer> positions;
         private LinearLayout hidden_layout;
+        private int display_img_width = 0;
 
         public TableRow() {
             super(mContext, R.layout.tablerow, mDataSource);
@@ -647,8 +650,19 @@ public class EventHandler implements OnClickListener {
             mViewHolder.topView.setTextColor(mColor);
             mViewHolder.bottomView.setTextColor(mColor);
 
-            if (mThumbnail == null)
-                mThumbnail = new ThumbnailCreator(52, 52);
+            if (display_img_width == 0) {
+                final int width = getContext().getResources().getDisplayMetrics().widthPixels;
+                if (width == 0) {
+                    display_img_width = 52;
+                } else {
+                    display_img_width = width / 10;
+                }
+                Log.d(TAG, "Thumbnail Width: " + display_img_width);
+            }
+
+            if (mThumbnail == null) {
+                mThumbnail = new ThumbnailCreator(display_img_width, display_img_width);
+            }
 
             if (file != null && file.isFile()) {
                 String ext = file.toString();
@@ -672,6 +686,8 @@ public class EventHandler implements OnClickListener {
                         sub_ext.equalsIgnoreCase("tiff")) {
 
                     if (thumbnail_flag && file.length() != 0) {
+                        StartupLogo.mImageFetcher.loadImage("file://" + file.getPath(), mViewHolder.icon);
+                        /*
                         Bitmap thumb = mThumbnail.isBitmapCached(file.getPath());
 
                         if (thumb == null) {
@@ -691,7 +707,7 @@ public class EventHandler implements OnClickListener {
                         } else {
                             mViewHolder.icon.setImageBitmap(thumb);
                         }
-
+                        */
                     } else {
                         mViewHolder.icon.setImageResource(R.drawable.image);
                     }

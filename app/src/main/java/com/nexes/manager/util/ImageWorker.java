@@ -139,11 +139,13 @@ public abstract class ImageWorker {
      * @param diskCacheDirectoryName See
      * {@link ImageCache.ImageCacheParams#ImageCacheParams(Context, String)}.
      */
-    public void addImageCache(FragmentActivity activity, String diskCacheDirectoryName) {
+    /*
+    public void addImageCache(android.app.FragmentManager activity, String diskCacheDirectoryName) {
         mImageCacheParams = new ImageCache.ImageCacheParams(activity, diskCacheDirectoryName);
-        mImageCache = ImageCache.getInstance(activity.getSupportFragmentManager(), mImageCacheParams);
+        mImageCache = ImageCache.getInstance(activity.getFragmentManager(), mImageCacheParams);
         new CacheAsyncTask().execute(MESSAGE_INIT_DISK_CACHE);
     }
+    */
 
     /**
      * If set to true, the image will fade-in once it has been loaded by the background thread.

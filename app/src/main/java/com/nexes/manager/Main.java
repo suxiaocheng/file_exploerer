@@ -48,6 +48,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nexes.manager.util.ImageCache;
+import com.nexes.manager.util.ImageFetcher;
+
 /**
  * This is the main activity. The activity that is presented to the user as the
  * application launches. This class is, and expected not to be, instantiated. <br>
@@ -150,7 +153,7 @@ public final class Main extends ListActivity {
         }
 
         /* Test: image view */
-        initDir = new String("/storage/sdcard1/DCIM/Camera");
+        initDir = new String("/mnt/sdcard/Pictures");//new String("/storage/sdcard1/DCIM/Camera");
 
         mFileMag = new FileManager(initDir);
         mFileMag.setShowHiddenFiles(hide);
@@ -167,7 +170,7 @@ public final class Main extends ListActivity {
         mTable = mHandler.new TableRow();
 
 		/*
-         * sets the ListAdapter for our ListActivity andgives our EventHandler
+         * sets the ListAdapter for our ListActivity and gives our EventHandler
 		 * class the same adapter
 		 */
         mHandler.setListAdapter(mTable);
@@ -199,21 +202,23 @@ public final class Main extends ListActivity {
         int[] button_id = {R.id.hidden_copy, R.id.hidden_attach,
                 R.id.hidden_delete, R.id.hidden_move};
         Button[] bt = new Button[button_id.length];
-        for (int i = 0; i < button_id.length; i++){
+        for (int i = 0; i < button_id.length; i++) {
             bt[i] = (Button) findViewById(button_id[i]);
             bt[i].setOnClickListener(mHandler);
         }
 
         Intent intent = getIntent();
-        if (intent.getAction().equals(Intent.ACTION_GET_CONTENT)) {
-            bimg[5].setVisibility(View.GONE);
-            mReturnIntent = true;
+        if ((intent != null) && (intent.getAction() != null)) {
+            if (intent.getAction().equals(Intent.ACTION_GET_CONTENT)) {
+                bimg[5].setVisibility(View.GONE);
+                mReturnIntent = true;
 
-        } else if (intent.getAction().equals(ACTION_WIDGET)) {
-            Log.e("MAIN", "Widget action, string = "
-                    + intent.getExtras().getString("folder"));
-            mHandler.updateDirectory(mFileMag.getNextDir(intent.getExtras()
-                    .getString("folder"), true));
+            } else if (intent.getAction().equals(ACTION_WIDGET)) {
+                Log.e("MAIN", "Widget action, string = "
+                        + intent.getExtras().getString("folder"));
+                mHandler.updateDirectory(mFileMag.getNextDir(intent.getExtras()
+                        .getString("folder"), true));
+            }
         }
     }
 
@@ -232,28 +237,28 @@ public final class Main extends ListActivity {
     }
 
     @Override
-    public void onRestart(){
+    public void onRestart() {
         super.onRestart();
 
         Log.d(TAG, "onRestart");
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
 
         Log.d(TAG, "onResume");
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
 
         Log.d(TAG, "onPause");
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
 
         Log.d(TAG, "onStop");
@@ -306,12 +311,12 @@ public final class Main extends ListActivity {
             available_sd1 = fs.getAvailableBlocks() * (fs.getBlockSize() / kb);
         }
 
-        if(!sd1_exist && sd0_exist) {
+        if (!sd1_exist && sd0_exist) {
             storage_information = String.format("sdcard: Total %.2f GB "
                             + "\t\tAvailable %.2f GB\n",
                     (double) total_sd0 / (kb * kb),
                     (double) available_sd0 / (kb * kb));
-        }else if(sd1_exist && sd0_exist){
+        } else if (sd1_exist && sd0_exist) {
             storage_information = String.format("sdcard0: Total %.2f GB "
                             + "\t\tAvailable %.2f GB\n" +
                             "sdcard1: Total  %.2f GB" +
@@ -320,7 +325,7 @@ public final class Main extends ListActivity {
                     (double) available_sd0 / (kb * kb),
                     (double) total_sd1 / (kb * kb),
                     (double) available_sd1 / (kb * kb));
-        }else{
+        } else {
             storage_information = String.format("No External Storage Available");
         }
 
@@ -374,7 +379,7 @@ public final class Main extends ListActivity {
                             Toast.LENGTH_SHORT).show();
                 }
             }
-			/* music file selected--add more audio formats */
+            /* music file selected--add more audio formats */
             else if (item_ext.equalsIgnoreCase(".mp3")
                     || item_ext.equalsIgnoreCase(".m4a")
                     || item_ext.equalsIgnoreCase(".mp4")) {
