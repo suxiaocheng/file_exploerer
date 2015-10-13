@@ -18,8 +18,10 @@ package com.nexes.manager.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,6 +34,7 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -210,11 +213,16 @@ public class ImageFetcher extends ImageResizer {
                         }
                         DiskLruCache.Editor editor = mHttpDiskCache.edit(key);
                         if (editor != null) {
-                            if (downloadUrlToStream(data,
-                                    editor.newOutputStream(DISK_CACHE_INDEX))) {
+                            if(data.charAt(0) == '/'){
+                                updateBitmapToStream(data, editor.newOutputStream(DISK_CACHE_INDEX));
                                 editor.commit();
-                            } else {
-                                editor.abort();
+                            }else {
+                                if (downloadUrlToStream(data,
+                                        editor.newOutputStream(DISK_CACHE_INDEX))) {
+                                    editor.commit();
+                                } else {
+                                    editor.abort();
+                                }
                             }
                         }
                         snapshot = mHttpDiskCache.get(key);
@@ -259,9 +267,60 @@ public class ImageFetcher extends ImageResizer {
     /**
      * Download a bitmap from a URL and write the content to an output stream.
      *
-     * @param urlString The URL to fetch
+     * @param path The URL to fetch
+     * @param outputStream the output of image file stream
      * @return true if successful, false otherwise
      */
+    private boolean updateBitmapToStream(String path, OutputStream outputStream) {
+        final int IMAGE_MAX_SIZE = 5000000; // 1.2MP
+        InputStream in;
+
+        try {
+            in = new FileInputStream(path);
+            BitmapFactory.Options o = new BitmapFactory.Options();
+            o.inJustDecodeBounds = true;
+            BitmapFactory.decodeStream(in, null, o);
+            in.close();
+
+            int scale = 1;
+            while (((o.outWidth * o.outHeight) >> scale) > IMAGE_MAX_SIZE) {
+                scale++;
+            }
+            Log.d(TAG, "scale = " + scale + ", orig-width: " + o.outWidth +
+                    ", orig-height: " + o.outHeight);
+
+            Bitmap b = null;
+            in = new FileInputStream(path);
+            if (scale > 1) {
+                scale--;
+                // scale to max possible inSampleSize that still yields an image
+                // larger than target
+                o = new BitmapFactory.Options();
+                o.inSampleSize = scale;
+                b = BitmapFactory.decodeStream(in, null, o);
+            } else {
+                b = BitmapFactory.decodeStream(in);
+            }
+            b.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+
+            Log.d(TAG, "Bitmap size is: " + b.getByteCount() + "Bytes");
+
+            b.recycle();
+            in.close();
+            return true;
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(),e);
+            return false;
+        }
+    }
+
+
+        /**
+         * Download a bitmap from a URL and write the content to an output stream.
+         *
+         * @param urlString The URL to fetch
+         * @return true if successful, false otherwise
+         */
     public boolean downloadUrlToStream(String urlString, OutputStream outputStream) {
         disableConnectionReuseIfNecessary();
         HttpURLConnection urlConnection = null;

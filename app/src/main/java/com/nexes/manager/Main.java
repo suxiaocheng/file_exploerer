@@ -153,7 +153,9 @@ public final class Main extends ListActivity {
         }
 
         /* Test: image view */
-        initDir = new String("/mnt/sdcard/Pictures");//new String("/storage/sdcard1/DCIM/Camera");
+        initDir = new String("/storage/sdcard1/DCIM/Camera");//new String("/mnt/sdcard/Pictures");//
+        StartupLogo.mImageFetcher.clearCache();
+
 
         mFileMag = new FileManager(initDir);
         mFileMag.setShowHiddenFiles(hide);
@@ -246,6 +248,8 @@ public final class Main extends ListActivity {
     @Override
     public void onResume() {
         super.onResume();
+        StartupLogo.mImageFetcher.setExitTasksEarly(false);
+        mTable.notifyDataSetChanged();
 
         Log.d(TAG, "onResume");
     }
@@ -253,6 +257,9 @@ public final class Main extends ListActivity {
     @Override
     public void onPause() {
         super.onPause();
+        StartupLogo.mImageFetcher.setPauseWork(false);
+        StartupLogo.mImageFetcher.setExitTasksEarly(true);
+        StartupLogo.mImageFetcher.flushCache();
 
         Log.d(TAG, "onPause");
     }
@@ -267,6 +274,7 @@ public final class Main extends ListActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        StartupLogo.mImageFetcher.closeCache();
 
         Log.d(TAG, "onDestroy");
     }

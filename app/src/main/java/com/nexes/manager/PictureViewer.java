@@ -29,7 +29,7 @@ public class PictureViewer extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_picture_viewer);
 
-		getActionBar().setDisplayHomeAsUpEnabled(true);
+		// getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		String filename = getIntent().getStringExtra(Main.EXTRA_PIC_LOCATION);
 		int lastSlashPosition = filename.lastIndexOf('/');

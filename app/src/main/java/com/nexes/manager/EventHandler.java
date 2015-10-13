@@ -37,8 +37,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -545,6 +547,7 @@ public class EventHandler implements OnClickListener {
         private ArrayList<Integer> positions;
         private LinearLayout hidden_layout;
         private int display_img_width = 0;
+        ListView.LayoutParams mImageViewLayoutParams;
 
         public TableRow() {
             super(mContext, R.layout.tablerow, mDataSource);
@@ -686,7 +689,7 @@ public class EventHandler implements OnClickListener {
                         sub_ext.equalsIgnoreCase("tiff")) {
 
                     if (thumbnail_flag && file.length() != 0) {
-                        StartupLogo.mImageFetcher.loadImage("file://" + file.getPath(), mViewHolder.icon);
+                        StartupLogo.mImageFetcher.loadImage(file.getPath(), mViewHolder.icon);
                         /*
                         Bitmap thumb = mThumbnail.isBitmapCached(file.getPath());
 

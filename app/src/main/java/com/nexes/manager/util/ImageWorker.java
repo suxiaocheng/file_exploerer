@@ -45,7 +45,7 @@ public abstract class ImageWorker {
     private ImageCache mImageCache;
     private ImageCache.ImageCacheParams mImageCacheParams;
     private Bitmap mLoadingBitmap;
-    private boolean mFadeInBitmap = true;
+    private boolean mFadeInBitmap = false;
     private boolean mExitTasksEarly = false;
     protected boolean mPauseWork = false;
     private final Object mPauseWorkLock = new Object();
