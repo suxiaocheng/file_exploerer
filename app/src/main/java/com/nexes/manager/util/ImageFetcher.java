@@ -283,7 +283,7 @@ public class ImageFetcher extends ImageResizer {
             in.close();
 
             int scale = 1;
-            while (((o.outWidth * o.outHeight) >> scale) > IMAGE_MAX_SIZE) {
+            while (((o.outWidth * o.outHeight) / scale / scale) > IMAGE_MAX_SIZE) {
                 scale++;
             }
             Log.d(TAG, "scale = " + scale + ", orig-width: " + o.outWidth +
@@ -301,7 +301,27 @@ public class ImageFetcher extends ImageResizer {
             } else {
                 b = BitmapFactory.decodeStream(in);
             }
-            b.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+
+            Bitmap dstBmp;
+            if (b.getWidth() >= b.getHeight()){
+                dstBmp = Bitmap.createBitmap(
+                        b,
+                        b.getWidth() / 2 - b.getHeight() / 2,
+                        0,
+                        b.getHeight(),
+                        b.getHeight()
+                );
+            }else{
+                dstBmp = Bitmap.createBitmap(
+                        b,
+                        0,
+                        b.getHeight() / 2 - b.getWidth() / 2,
+                        b.getWidth(),
+                        b.getWidth()
+                );
+            }
+
+            dstBmp.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
 
             Log.d(TAG, "Bitmap size is: " + b.getByteCount() + "Bytes");
 

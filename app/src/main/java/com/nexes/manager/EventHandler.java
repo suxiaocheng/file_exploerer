@@ -18,6 +18,7 @@
 
 package com.nexes.manager;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -43,6 +44,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nexes.manager.util.ImageFetcher;
 
 import java.io.File;
 import java.util.ArrayList;
