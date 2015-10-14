@@ -20,6 +20,7 @@ package com.nexes.manager;
 
 import java.io.File;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -27,10 +28,12 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -122,6 +125,8 @@ public final class Main extends ListActivity {
     private TextView mPathLabel, mDetailLabel, mStorageLabel;
     private boolean mUseExternPicView = false;
 
+    public static ImageFetcher mImageFetcher;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,10 +157,20 @@ public final class Main extends ListActivity {
             initDir = Environment.getRootDirectory().toString();
         }
 
-        /* Test: image view */
-        initDir = new String("/storage/sdcard1/DCIM/Camera");//new String("/mnt/sdcard/Pictures");//
-        StartupLogo.mImageFetcher.clearCache();
+        Log.d(TAG, "Image Fetcher null, create it");
+        /* ImageCache Init: Before the list image getView, must init the cache first */
+        ImageCache.ImageCacheParams cacheParams =
+                new ImageCache.ImageCacheParams(getApplication(), StartupLogo.IMAGE_CACHE_DIR);
+        cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to 25% of app memory
 
+        // The ImageFetcher takes care of loading images into our ImageView children asynchronously
+        mImageFetcher = new ImageFetcher(getApplication(), StartupLogo.mImageThumbSize);
+        mImageFetcher.setLoadingImage(R.drawable.image);
+        mImageFetcher.addImageCache(StartupLogo.mFragmentManager, cacheParams);
+
+        /* Test: image view */
+        initDir = new String("/mnt/sdcard/Pictures");//new String("/storage/sdcard1/DCIM/Camera");//
+        //mImageFetcher.clearCache();
 
         mFileMag = new FileManager(initDir);
         mFileMag.setShowHiddenFiles(hide);
@@ -248,7 +263,7 @@ public final class Main extends ListActivity {
     @Override
     public void onResume() {
         super.onResume();
-        StartupLogo.mImageFetcher.setExitTasksEarly(false);
+        mImageFetcher.setExitTasksEarly(false);
         mTable.notifyDataSetChanged();
 
         Log.d(TAG, "onResume");
@@ -257,9 +272,9 @@ public final class Main extends ListActivity {
     @Override
     public void onPause() {
         super.onPause();
-        StartupLogo.mImageFetcher.setPauseWork(false);
-        StartupLogo.mImageFetcher.setExitTasksEarly(true);
-        StartupLogo.mImageFetcher.flushCache();
+        mImageFetcher.setPauseWork(false);
+        mImageFetcher.setExitTasksEarly(true);
+        mImageFetcher.flushCache();
 
         Log.d(TAG, "onPause");
     }
@@ -274,7 +289,7 @@ public final class Main extends ListActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        StartupLogo.mImageFetcher.closeCache();
+        mImageFetcher.closeCache();
 
         Log.d(TAG, "onDestroy");
     }
@@ -401,7 +416,7 @@ public final class Main extends ListActivity {
                     startActivity(i);
                 }
             }
-			/* photo file selected */
+            /* photo file selected */
             else if (item_ext.equalsIgnoreCase(".jpeg")
                     || item_ext.equalsIgnoreCase(".jpg")
                     || item_ext.equalsIgnoreCase(".png")

@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -632,6 +633,13 @@ public class EventHandler implements OnClickListener {
             if (list != null)
                 num_items = list.length;
 
+            if (display_img_width == 0) {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeResource(mContext.getResources(), R.drawable.image, options);
+                display_img_width = options.outWidth;
+            }
+
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) mContext.
                         getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -655,16 +663,6 @@ public class EventHandler implements OnClickListener {
 
             mViewHolder.topView.setTextColor(mColor);
             mViewHolder.bottomView.setTextColor(mColor);
-
-            if (display_img_width == 0) {
-                final int width = getContext().getResources().getDisplayMetrics().widthPixels;
-                if (width == 0) {
-                    display_img_width = 52;
-                } else {
-                    display_img_width = width / 10;
-                }
-                Log.d(TAG, "Thumbnail Width: " + display_img_width);
-            }
 
             if (mThumbnail == null) {
                 mThumbnail = new ThumbnailCreator(display_img_width, display_img_width);
@@ -692,28 +690,7 @@ public class EventHandler implements OnClickListener {
                         sub_ext.equalsIgnoreCase("tiff")) {
 
                     if (thumbnail_flag && file.length() != 0) {
-                        StartupLogo.mImageFetcher.loadImage(file.getPath(), mViewHolder.icon);
-                        /*
-                        Bitmap thumb = mThumbnail.isBitmapCached(file.getPath());
-
-                        if (thumb == null) {
-                            final Handler handle = new Handler(new Handler.Callback() {
-                                public boolean handleMessage(Message msg) {
-                                    notifyDataSetChanged();
-                                    return true;
-                                }
-                            });
-
-                            mThumbnail.createNewThumbnail(mDataSource, mFileMang.getCurrentDir(), handle);
-
-                            if (!mThumbnail.isAlive()) {
-                                mThumbnail.start();
-                            }
-
-                        } else {
-                            mViewHolder.icon.setImageBitmap(thumb);
-                        }
-                        */
+                        Main.mImageFetcher.loadImage(file.getPath(), mViewHolder.icon);
                     } else {
                         mViewHolder.icon.setImageResource(R.drawable.image);
                     }

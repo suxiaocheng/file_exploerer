@@ -1,9 +1,11 @@
 package com.nexes.manager;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,8 +18,13 @@ public class StartupLogo extends AppCompatActivity {
     private static final String TAG = "StartupLogo";
 
     /* For Image Cached used only */
-    private static final String IMAGE_CACHE_DIR = "thumbs";
-    public static ImageFetcher mImageFetcher;
+    public static final String IMAGE_CACHE_DIR = "thumbs";
+
+    /**/
+    public static int mImageThumbSize;
+
+    /**/
+    public static FragmentManager mFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,26 +42,12 @@ public class StartupLogo extends AppCompatActivity {
             }
         });
 
-        if (mImageFetcher == null) {
-        /* ImageCache Init: Before the list image getView, must init the cache first */
-            ImageCache.ImageCacheParams cacheParams =
-                    new ImageCache.ImageCacheParams(getApplication(), IMAGE_CACHE_DIR);
-            cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to 25% of app memory
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), R.drawable.image, options);
+        mImageThumbSize = options.outWidth;
 
-            final int width = getResources().getDisplayMetrics().widthPixels;
-            int mImageThumbSize;
-            if (width == 0) {
-                mImageThumbSize = 52;
-            } else {
-                mImageThumbSize = width / 10;
-            }
-            Log.d(TAG, "Thumbnail Width: " + mImageThumbSize);
-
-            // The ImageFetcher takes care of loading images into our ImageView children asynchronously
-            mImageFetcher = new ImageFetcher(getApplication(), mImageThumbSize);
-            mImageFetcher.setLoadingImage(R.drawable.image);
-            mImageFetcher.addImageCache(getSupportFragmentManager(), cacheParams);
-        }
+        mFragmentManager = getSupportFragmentManager();
 
         Intent intent = new Intent(this, Main.class);
         startActivity(intent);

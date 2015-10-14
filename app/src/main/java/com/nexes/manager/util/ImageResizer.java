@@ -195,7 +195,29 @@ public class ImageResizer extends ImageWorker {
             addInBitmapOptions(options, cache);
         }
 
-        return BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
+        Bitmap scaleBitmap, centerBitmap, originBitmap;
+        originBitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
+        if (originBitmap.getWidth() >= originBitmap.getHeight()){
+            centerBitmap = Bitmap.createBitmap(
+                    originBitmap,
+                    originBitmap.getWidth() / 2 - originBitmap.getHeight() / 2,
+                    0,
+                    originBitmap.getHeight(),
+                    originBitmap.getHeight()
+            );
+        }else{
+            centerBitmap = Bitmap.createBitmap(
+                    originBitmap,
+                    0,
+                    originBitmap.getHeight() / 2 - originBitmap.getWidth() / 2,
+                    originBitmap.getWidth(),
+                    originBitmap.getWidth()
+            );
+        }
+        originBitmap.recycle();
+        scaleBitmap = centerBitmap.createScaledBitmap(centerBitmap, reqWidth, reqHeight, true);
+        centerBitmap.recycle();
+        return scaleBitmap;
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

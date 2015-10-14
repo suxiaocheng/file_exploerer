@@ -21,6 +21,9 @@ import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.StrictMode;
 
+import com.nexes.manager.Main;
+import com.nexes.manager.PictureViewer;
+
 /**
  * Class containing some static utility methods.
  */
@@ -42,10 +45,10 @@ public class Utils {
 
             if (Utils.hasHoneycomb()) {
                 threadPolicyBuilder.penaltyFlashScreen();
-                /* vmPolicyBuilder
-                        .setClassInstanceLimit(ImageGridActivity.class, 1)
-                        .setClassInstanceLimit(ImageDetailActivity.class, 1);
-                 */
+                vmPolicyBuilder
+                        .setClassInstanceLimit(Main.class, 1)
+                        .setClassInstanceLimit(PictureViewer.class, 1);
+
             }
             StrictMode.setThreadPolicy(threadPolicyBuilder.build());
             StrictMode.setVmPolicy(vmPolicyBuilder.build());

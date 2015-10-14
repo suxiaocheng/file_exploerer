@@ -44,7 +44,7 @@ import java.net.URL;
  */
 public class ImageFetcher extends ImageResizer {
     private static final String TAG = "ImageFetcher";
-    private static final int HTTP_CACHE_SIZE = 10 * 1024 * 1024; // 10MB
+    private static final int HTTP_CACHE_SIZE = 32 * 1024 * 1024; // 32MB
     private static final String HTTP_CACHE_DIR = "http";
     private static final int IO_BUFFER_SIZE = 8 * 1024;
 
@@ -214,8 +214,11 @@ public class ImageFetcher extends ImageResizer {
                         DiskLruCache.Editor editor = mHttpDiskCache.edit(key);
                         if (editor != null) {
                             if(data.charAt(0) == '/'){
-                                updateBitmapToStream(data, editor.newOutputStream(DISK_CACHE_INDEX));
-                                editor.commit();
+                                if(updateBitmapToStream(data, editor.newOutputStream(DISK_CACHE_INDEX))) {
+                                    editor.commit();
+                                }else{
+                                    editor.abort();
+                                }
                             }else {
                                 if (downloadUrlToStream(data,
                                         editor.newOutputStream(DISK_CACHE_INDEX))) {
@@ -272,7 +275,7 @@ public class ImageFetcher extends ImageResizer {
      * @return true if successful, false otherwise
      */
     private boolean updateBitmapToStream(String path, OutputStream outputStream) {
-        final int IMAGE_MAX_SIZE = 5000000; // 1.2MP
+        final int IMAGE_MAX_SIZE = 5000000; // 5MP
         InputStream in;
 
         try {
@@ -302,28 +305,7 @@ public class ImageFetcher extends ImageResizer {
                 b = BitmapFactory.decodeStream(in);
             }
 
-            Bitmap dstBmp;
-            if (b.getWidth() >= b.getHeight()){
-                dstBmp = Bitmap.createBitmap(
-                        b,
-                        b.getWidth() / 2 - b.getHeight() / 2,
-                        0,
-                        b.getHeight(),
-                        b.getHeight()
-                );
-            }else{
-                dstBmp = Bitmap.createBitmap(
-                        b,
-                        0,
-                        b.getHeight() / 2 - b.getWidth() / 2,
-                        b.getWidth(),
-                        b.getWidth()
-                );
-            }
-
-            dstBmp.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-
-            Log.d(TAG, "Bitmap size is: " + b.getByteCount() + "Bytes");
+            b.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
 
             b.recycle();
             in.close();
