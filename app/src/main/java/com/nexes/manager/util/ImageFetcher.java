@@ -33,6 +33,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -44,7 +45,7 @@ import java.net.URL;
  */
 public class ImageFetcher extends ImageResizer {
     private static final String TAG = "ImageFetcher";
-    private static final int HTTP_CACHE_SIZE = 32 * 1024 * 1024; // 32MB
+    private static final int HTTP_CACHE_SIZE = 64 * 1024 * 1024; // 32MB
     private static final String HTTP_CACHE_DIR = "http";
     private static final int IO_BUFFER_SIZE = 8 * 1024;
 
@@ -166,10 +167,10 @@ public class ImageFetcher extends ImageResizer {
     }
 
     /**
-    * Simple network connection check.
-    *
-    * @param context
-    */
+     * Simple network connection check.
+     *
+     * @param context
+     */
     private void checkConnection(Context context) {
         final ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -201,10 +202,31 @@ public class ImageFetcher extends ImageResizer {
             while (mHttpDiskCacheStarting) {
                 try {
                     mHttpDiskCacheLock.wait();
-                } catch (InterruptedException e) {}
+                } catch (InterruptedException e) {
+                }
             }
 
-            if (mHttpDiskCache != null) {
+            if (data.charAt(0) == '/') {
+                try {
+                    fileInputStream = new FileInputStream(new File(data));
+                    fileDescriptor = fileInputStream.getFD();
+                } catch (FileNotFoundException e) {
+                    Log.e(TAG, "processBitmap - " + e);
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Log.e(TAG, "processBitmap - " + e);
+                    e.printStackTrace();
+                } finally {
+                    if (fileDescriptor == null && fileInputStream != null) {
+                        try {
+                            fileInputStream.close();
+                        } catch (IOException e) {
+                            Log.e(TAG, "processBitmap - " + e);
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            } else if (mHttpDiskCache != null) {
                 try {
                     snapshot = mHttpDiskCache.get(key);
                     if (snapshot == null) {
@@ -213,19 +235,11 @@ public class ImageFetcher extends ImageResizer {
                         }
                         DiskLruCache.Editor editor = mHttpDiskCache.edit(key);
                         if (editor != null) {
-                            if(data.charAt(0) == '/'){
-                                if(updateBitmapToStream(data, editor.newOutputStream(DISK_CACHE_INDEX))) {
-                                    editor.commit();
-                                }else{
-                                    editor.abort();
-                                }
-                            }else {
-                                if (downloadUrlToStream(data,
-                                        editor.newOutputStream(DISK_CACHE_INDEX))) {
-                                    editor.commit();
-                                } else {
-                                    editor.abort();
-                                }
+                            if (downloadUrlToStream(data,
+                                    editor.newOutputStream(DISK_CACHE_INDEX))) {
+                                editor.commit();
+                            } else {
+                                editor.abort();
                             }
                         }
                         snapshot = mHttpDiskCache.get(key);
@@ -243,7 +257,8 @@ public class ImageFetcher extends ImageResizer {
                     if (fileDescriptor == null && fileInputStream != null) {
                         try {
                             fileInputStream.close();
-                        } catch (IOException e) {}
+                        } catch (IOException e) {
+                        }
                     }
                 }
             }
@@ -257,7 +272,8 @@ public class ImageFetcher extends ImageResizer {
         if (fileInputStream != null) {
             try {
                 fileInputStream.close();
-            } catch (IOException e) {}
+            } catch (IOException e) {
+            }
         }
         return bitmap;
     }
@@ -270,7 +286,7 @@ public class ImageFetcher extends ImageResizer {
     /**
      * Download a bitmap from a URL and write the content to an output stream.
      *
-     * @param path The URL to fetch
+     * @param path         The URL to fetch
      * @param outputStream the output of image file stream
      * @return true if successful, false otherwise
      */
@@ -311,18 +327,18 @@ public class ImageFetcher extends ImageResizer {
             in.close();
             return true;
         } catch (IOException e) {
-            Log.e(TAG, e.getMessage(),e);
+            Log.e(TAG, e.getMessage(), e);
             return false;
         }
     }
 
 
-        /**
-         * Download a bitmap from a URL and write the content to an output stream.
-         *
-         * @param urlString The URL to fetch
-         * @return true if successful, false otherwise
-         */
+    /**
+     * Download a bitmap from a URL and write the content to an output stream.
+     *
+     * @param urlString The URL to fetch
+     * @return true if successful, false otherwise
+     */
     public boolean downloadUrlToStream(String urlString, OutputStream outputStream) {
         disableConnectionReuseIfNecessary();
         HttpURLConnection urlConnection = null;
@@ -353,7 +369,8 @@ public class ImageFetcher extends ImageResizer {
                 if (in != null) {
                     in.close();
                 }
-            } catch (final IOException e) {}
+            } catch (final IOException e) {
+            }
         }
         return false;
     }

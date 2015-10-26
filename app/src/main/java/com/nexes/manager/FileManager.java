@@ -520,7 +520,7 @@ public class FileManager {
      *
      * @return
      */
-    private ArrayList<String> populate_list() {
+    public ArrayList<String> populate_list() {
 
         if (!mDirContent.isEmpty())
             mDirContent.clear();

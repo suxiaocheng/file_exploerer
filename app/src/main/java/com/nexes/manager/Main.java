@@ -78,16 +78,16 @@ public final class Main extends ListActivity {
 
     private static final String TAG = "Main";
 
-    private static final String PREFS_NAME = "ManagerPrefsFile"; // user
+    public static final String PREFS_NAME = "ManagerPrefsFile"; // user
     // preference
     // file name
-    private static final String PREFS_HIDDEN = "hidden";
-    private static final String PREFS_COLOR = "color";
-    private static final String PREFS_THUMBNAIL = "thumbnail";
-    private static final String PREFS_SORT = "sort";
-    private static final String PREFS_STORAGE = "sdcard space";
-    private static final String PREFS_EXTERNVIEW = "use extern picture viwer";
-    private static final String PREFS_INITDIR = "init dir";
+    public static final String PREFS_HIDDEN = "hidden";
+    public static final String PREFS_COLOR = "color";
+    public static final String PREFS_THUMBNAIL = "thumbnail";
+    public static final String PREFS_SORT = "sort";
+    public static final String PREFS_STORAGE = "sdcard space";
+    public static final String PREFS_EXTERNVIEW = "use extern picture viwer";
+    public static final String PREFS_INITDIR = "init dir";
 
     private static final int MENU_MKDIR = 0x00; // option menu id
     private static final int MENU_SETTING = 0x01; // option menu id
@@ -110,7 +110,7 @@ public final class Main extends ListActivity {
     private static final int F_MENU_COPY = 0x0d; // context menu id
     private static final int SETTING_REQ = 0x10; // request code for intent
 
-    private FileManager mFileMag;
+    public static FileManager mFileMag;
     private EventHandler mHandler;
     private EventHandler.TableRow mTable;
 
@@ -141,7 +141,7 @@ public final class Main extends ListActivity {
         boolean thumb = mSettings.getBoolean(PREFS_THUMBNAIL, true);
         int space = mSettings.getInt(PREFS_STORAGE, View.VISIBLE);
         int color = mSettings.getInt(PREFS_COLOR, -1);
-        int sort = mSettings.getInt(PREFS_SORT, 3);
+        int sort = mSettings.getInt(PREFS_SORT, 1);
         mUseExternPicView = mSettings.getBoolean(PREFS_EXTERNVIEW, false);
         String initDir = null;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
@@ -169,8 +169,8 @@ public final class Main extends ListActivity {
         mImageFetcher.addImageCache(StartupLogo.mFragmentManager, cacheParams);
 
         /* Test: image view */
-        initDir = new String("/mnt/sdcard/Pictures");//new String("/storage/sdcard1/DCIM/Camera");//
-        //mImageFetcher.clearCache();
+        initDir = new String("/storage/sdcard1/DCIM/tieba_backup");//new String("/mnt/sdcard/Pictures/Test");//
+        // mImageFetcher.clearCache();
 
         mFileMag = new FileManager(initDir);
         mFileMag.setShowHiddenFiles(hide);
@@ -209,7 +209,7 @@ public final class Main extends ListActivity {
 		/* setup buttons */
         int[] img_button_id = {R.id.help_button, R.id.home_button,
                 R.id.back_button, R.id.info_button, R.id.manage_button,
-                R.id.multiselect_button, R.id.shutdown_button};
+                R.id.multiselect_button, R.id.clear_cache, R.id.shutdown_button};
         ImageButton[] bimg = new ImageButton[img_button_id.length];
         for (int i = 0; i < img_button_id.length; i++) {
             bimg[i] = (ImageButton) findViewById(img_button_id[i]);
@@ -290,6 +290,7 @@ public final class Main extends ListActivity {
     protected void onDestroy() {
         super.onDestroy();
         mImageFetcher.closeCache();
+        mImageFetcher = null;
 
         Log.d(TAG, "onDestroy");
     }

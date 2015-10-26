@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.nexes.manager.ImageDetailFragment$PlaceholderFragment" >
-    
+    tools:context="com.nexes.manager.ImageDetailFragment$PlaceholderFragment">
+
     <com.nexes.manager.TouchImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -21,5 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
+
+    <com.nexes.manager.GifView
+        android:id="@+id/gif_display_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

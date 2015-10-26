@@ -45,10 +45,10 @@ public class Utils {
 
             if (Utils.hasHoneycomb()) {
                 threadPolicyBuilder.penaltyFlashScreen();
-                vmPolicyBuilder
+                /* vmPolicyBuilder
                         .setClassInstanceLimit(Main.class, 1)
                         .setClassInstanceLimit(PictureViewer.class, 1);
-
+                */
             }
             StrictMode.setThreadPolicy(threadPolicyBuilder.build());
             StrictMode.setVmPolicy(vmPolicyBuilder.build());

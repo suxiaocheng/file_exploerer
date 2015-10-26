@@ -194,8 +194,10 @@ public class ImageResizer extends ImageWorker {
         if (Utils.hasHoneycomb()) {
             addInBitmapOptions(options, cache);
         }
-
-        Bitmap scaleBitmap, centerBitmap, originBitmap;
+        Bitmap originBitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
+        return originBitmap;
+        /*
+        Bitmap scaleBitmap = null, centerBitmap, originBitmap;
         originBitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor, null, options);
         if (originBitmap.getWidth() >= originBitmap.getHeight()){
             centerBitmap = Bitmap.createBitmap(
@@ -214,10 +216,18 @@ public class ImageResizer extends ImageWorker {
                     originBitmap.getWidth()
             );
         }
-        originBitmap.recycle();
-        scaleBitmap = centerBitmap.createScaledBitmap(centerBitmap, reqWidth, reqHeight, true);
-        centerBitmap.recycle();
-        return scaleBitmap;
+        if(originBitmap != centerBitmap){
+            originBitmap.recycle();
+        }
+        if((reqHeight < centerBitmap.getHeight()) || (reqWidth < centerBitmap.getWidth())) {
+            scaleBitmap = centerBitmap.createScaledBitmap(centerBitmap, reqWidth, reqHeight, true);
+        }
+        if((scaleBitmap != null) && (scaleBitmap != centerBitmap)){
+            centerBitmap.recycle();
+            return scaleBitmap;
+        }
+        return centerBitmap;
+        */
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

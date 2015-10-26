@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 public class ImageDetailFragment extends Fragment {
 	private static final String TAG = "ImageDetailFragment";
@@ -39,6 +40,8 @@ public class ImageDetailFragment extends Fragment {
 
 	float oldDist;
 
+    private boolean display_gif = false;
+
 	/**
 	 * This fragment will populate the children of the ViewPager from
 	 * {@link Fragment}.
@@ -46,6 +49,7 @@ public class ImageDetailFragment extends Fragment {
 	private static final String IMAGE_DATA_EXTRA = "extra_image_data";
 	private String mImageUrl;
 	private TouchImageView mImageView;
+    private GifView mGifView;
 	private View progressBar;
 	private static boolean enableSampleDown = false;
 	private static boolean enableCachedImage = true;
@@ -58,7 +62,7 @@ public class ImageDetailFragment extends Fragment {
 	/**
 	 * Factory method to generate a new instance of the fragment given an image
 	 * number.
-	 * 
+	 *
 	 * @param imageUrl
 	 *            The image url to load
 	 * @return A new instance of ImageDetailFragment with imageNum extras
@@ -89,6 +93,14 @@ public class ImageDetailFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		mImageUrl = getArguments() != null ? getArguments().getString(
 				IMAGE_DATA_EXTRA) : null;
+
+        int dotPosition = mImageUrl.lastIndexOf('.');
+        if ((dotPosition != -1) && (dotPosition != 0)) {
+            String ext = mImageUrl.substring(dotPosition + 1, mImageUrl.length());
+            if (ext.compareToIgnoreCase("gif") == 0){
+                display_gif = true;
+            }
+        }
 	}
 
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -100,9 +112,16 @@ public class ImageDetailFragment extends Fragment {
 				container, false);
 		mImageView = (TouchImageView) v.findViewById(R.id.imageView);
 		progressBar = (View) v.findViewById(R.id.loading_spinner);
+        mGifView = (GifView) v.findViewById(R.id.gif_display_view);
 
 		progressBar.setVisibility(View.INVISIBLE);
-		mImageView.setVisibility(View.VISIBLE);
+        if(display_gif == true){
+            mImageView.setVisibility(View.GONE);
+            mGifView.setVisibility(View.VISIBLE);
+        }else{
+            mImageView.setVisibility(View.VISIBLE);
+            mGifView.setVisibility(View.GONE);
+        }
 
 		return v;
 	}
@@ -116,16 +135,23 @@ public class ImageDetailFragment extends Fragment {
 		// cache can be used over all pages in the ViewPager
 		if (PictureViewer.class.isInstance(getActivity())) {
 			Log.d(TAG, "onActivityCreated:" + mImageUrl);
-			PictureViewer.mImageFetcher.loadImage(mImageUrl, mImageView);
+            if(!display_gif){
+                PictureViewer.mImageFetcher.loadImage(mImageUrl, mImageView);
+            }else{
+                mGifView.setFile(mImageUrl);
+            }
 		}
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		if (mImageView != null) {
-			// Cancel any pending image work
-			mImageView.setImageDrawable(null);
-		}
+        if(display_gif){
+        }else{
+            if (mImageView != null) {
+                // Cancel any pending image work
+                mImageView.setImageDrawable(null);
+            }
+        }
 	}
 }

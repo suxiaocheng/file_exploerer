@@ -38,6 +38,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -442,6 +443,12 @@ public class EventHandler implements OnClickListener {
 
                 builder.create().show();
                 break;
+            case R.id.clear_cache:
+                if(Main.mImageFetcher != null) {
+                    Main.mImageFetcher.clearCache();
+                    Toast.makeText(mainActivity, "Sucessfully clean the cached", Toast.LENGTH_SHORT).show();
+                }
+                break;
             case R.id.shutdown_button:
                 stopThumbnailThread();
                 mainActivity.finish();
@@ -633,13 +640,6 @@ public class EventHandler implements OnClickListener {
             if (list != null)
                 num_items = list.length;
 
-            if (display_img_width == 0) {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeResource(mContext.getResources(), R.drawable.image, options);
-                display_img_width = options.outWidth;
-            }
-
             if (convertView == null) {
                 LayoutInflater inflater = (LayoutInflater) mContext.
                         getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -650,6 +650,25 @@ public class EventHandler implements OnClickListener {
                 mViewHolder.bottomView = (TextView) convertView.findViewById(R.id.bottom_view);
                 mViewHolder.icon = (ImageView) convertView.findViewById(R.id.row_image);
                 mViewHolder.mSelect = (ImageView) convertView.findViewById(R.id.multiselect_icon);
+
+                if (display_img_width == 0) {
+                    BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inJustDecodeBounds = true;
+                    BitmapFactory.decodeResource(mContext.getResources(), R.drawable.image, options);
+                    display_img_width = options.outWidth;
+
+                    final float text_size_topView = mViewHolder.topView.getTextSize();
+                    final float text_size_bottomView = mViewHolder.bottomView.getTextSize();
+                    if((display_img_width) < (text_size_topView+text_size_bottomView)){
+                        display_img_width = (int)(text_size_topView+text_size_bottomView);
+                    }
+                }
+
+                ViewGroup.LayoutParams para;
+                para = mViewHolder.icon.getLayoutParams();
+                para.height = display_img_width;
+                para.width = display_img_width;
+                mViewHolder.icon.setLayoutParams(para);
 
                 convertView.setTag(mViewHolder);
             } else {
