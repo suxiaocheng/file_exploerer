@@ -169,7 +169,7 @@ public final class Main extends ListActivity {
         mImageFetcher.addImageCache(StartupLogo.mFragmentManager, cacheParams);
 
         /* Test: image view */
-        initDir = new String("/storage/sdcard1/DCIM/tieba_backup");//new String("/mnt/sdcard/Pictures/Test");//
+        initDir = new String("/mnt/sdcard/Pictures/");//new String("/storage/sdcard1/DCIM/tieba_backup");//
         // mImageFetcher.clearCache();
 
         mFileMag = new FileManager(initDir);
