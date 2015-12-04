@@ -9,7 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15c29f0d-c648-4407-963b-fb11d960b8b4" name="Default" comment="" />
+    <list default="true" id="4d55fbf7-a42b-4dc7-8d8f-73e9d1770ec9" name="Default" comment="" />
     <ignored path="file_exploerer.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,14 +35,58 @@
     <favorites_list name="file_exploerer" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+    <leaf>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="90" column="40" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartupLogo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/StartupLogo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7561644">
+              <caret line="241" column="12" selection-start-line="241" selection-start-column="12" selection-end-line="241" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="values.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable-master/1.1.10/res/values/values.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.0357144">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -2432,8 +2476,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="C:\Users\suxch\AndroidstudioProjects\file_exploerer" value="8671888997185" />
-        <entry key="D:\work\code\android\file_exploerer" value="4336497764921" />
+        <entry key="L:\work\android\studio\file_exploerer" value="8695449471416" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2829,7 +2872,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="file_exploerer" />
+              <option name="name" value="app" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$APPLICATION_HOME_DIR$/gradle/gradle-2.4/src/announce" />
@@ -2959,38 +3002,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageCache.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/DiskLruCache.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/Utils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageWorker.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageFetcher.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageResizer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/FileManager.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/PictureViewer.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/tablerow.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/EventHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/GifView.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/Main.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/nexes/manager/ImageDetailFragment.java" />
-        <option value="$PROJECT_DIR$/library/android-gif-drawable-master/android-gif-drawable-master.iml" />
-        <option value="$PROJECT_DIR$/library/android-gif-drawable-master/ndk.gradle" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState />
   </component>
   <component name="NamedScopeManager">
     <order />
@@ -3056,9 +3070,87 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -3067,9 +3159,19 @@
               <option name="myItemId" value="file_exploerer" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3077,25 +3179,56 @@
               <option name="myItemId" value="file_exploerer" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manager" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file_exploerer" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="processBitmap&#9;PSI&#9;JAVA://com.nexes.manager.util.ImageFetcher#processBitmap" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
-    <property name="FullScreen" value="false" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="3_2_HVGA_slider_ADP1_API_17" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="PZDQEIYSHU8HI7U4" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="3_2_QVGA_ADP2_API_23" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -3110,7 +3243,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -3140,7 +3274,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -3178,11 +3313,11 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
+        <value defaultName="moduleWithDependencies" />
       </option>
       <envs />
       <patterns />
@@ -3220,7 +3355,7 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
+        <value defaultName="moduleWithDependencies" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
@@ -3232,6 +3367,7 @@
     <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="app" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -3246,7 +3382,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -3273,6 +3410,10 @@
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -3280,132 +3421,55 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="15c29f0d-c648-4407-963b-fb11d960b8b4" name="Default" comment="" />
-      <created>1444808105206</created>
+      <changelist id="4d55fbf7-a42b-4dc7-8d8f-73e9d1770ec9" name="Default" comment="" />
+      <created>1449242061928</created>
       <option name="number" value="Default" />
-      <updated>1444808105206</updated>
+      <updated>1449242061928</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270869" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27597955" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22768533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25472748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.516184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4684838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="19" />
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="app">
-        <watch expression="options" />
-        <watch expression="originBitmap" />
-        <watch expression="scaleBitmap" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="285" column="54" selection-start-line="285" selection-start-column="54" selection-end-line="285" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/DiskLruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="753" column="0" selection-start-line="753" selection-start-column="0" selection-end-line="753" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="338" column="67" selection-start-line="338" selection-start-column="67" selection-end-line="338" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="45" selection-start-line="195" selection-start-column="45" selection-end-line="195" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageResizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="41" selection-start-line="178" selection-start-column="41" selection-end-line="178" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -3413,318 +3477,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/EventHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="692" column="49" selection-start-line="692" selection-start-column="49" selection-end-line="692" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="462" column="26" selection-start-line="462" selection-start-column="26" selection-end-line="462" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="431" column="37" selection-start-line="431" selection-start-column="37" selection-end-line="431" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/DiskLruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="446" column="13" selection-start-line="446" selection-start-column="13" selection-end-line="446" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="45" selection-start-line="195" selection-start-column="45" selection-end-line="195" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageResizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="25" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/ImageDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="473" column="16" selection-start-line="473" selection-start-column="16" selection-end-line="473" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="398" column="26" selection-start-line="398" selection-start-column="16" selection-end-line="398" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/DiskLruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="472" column="33" selection-start-line="472" selection-start-column="33" selection-end-line="472" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="37" selection-start-line="111" selection-start-column="19" selection-end-line="111" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageResizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="178" column="25" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/PictureViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="44" selection-start-line="152" selection-start-column="44" selection-end-line="152" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5698924">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="40" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="40" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="312" column="0" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/DiskLruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60215056">
-          <caret line="492" column="44" selection-start-line="492" selection-start-column="25" selection-end-line="492" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39772728">
-          <caret line="100" column="51" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="51" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_picture_viewer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.564433">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/StartupLogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28229666">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/tablerow.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5103093">
-          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/PictureViewer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.4545455">
-          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/TouchImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45454547">
-          <caret line="40" column="41" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33275262">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/FileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="26" />
+          <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/EventHandler.java">
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable-master/1.1.10/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2020906">
-          <caret line="724" column="58" selection-start-line="724" selection-start-column="58" selection-end-line="724" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageResizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.019163763">
-          <caret line="178" column="25" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.137931">
-          <caret line="377" column="7" selection-start-line="377" selection-start-column="7" selection-end-line="377" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/util/ImageCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="690" column="49" selection-start-line="690" selection-start-column="49" selection-end-line="690" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_image_detail.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08116883">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/ImageDetailFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+        <state vertical-scroll-proportion="-3.0357144">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/nexes/manager/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.071428">
-          <caret line="197" column="0" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/android-gif-drawable-master.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71005917">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/gradle-mvn-push.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5245283">
-          <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4716982">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/src/main/jni/Android.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8867924">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/src/main/jni/Application.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/android-gif-drawable-master/ndk.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.509434">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.642857">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056603774">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26415095">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7561644">
+          <caret line="241" column="12" selection-start-line="241" selection-start-column="12" selection-end-line="241" selection-end-column="12" />
           <folding />
         </state>
       </provider>
